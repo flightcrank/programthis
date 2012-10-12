@@ -51,13 +51,13 @@ int main() {
 	int days = 0;
 	int i;
 
-	//Add all the days total besise the current specified year
+	//Add all the days total besides the current specified year
 	for (i = 0; i < 12; i ++) {
 	
 		//if feb
 		if (i == 1) {
 			
-			days += (leap * 29) + (non_leap * 28);
+			days += (leap * 29) + (non_leap * m[i]);
 			
 		} else {
 
@@ -76,6 +76,7 @@ int main() {
 				if (is_leap(YEAR)) {
 					
 					days += m[i] + 1;
+
 				} else {
 				
 					days += m[i];
@@ -88,7 +89,7 @@ int main() {
 		}
 	}
 	
-	//Add the days in the currnt month to the total
+	//Add the days in the current month to the total
 	days += DAY;
 
 	int d = days % 7;
